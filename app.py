@@ -20,7 +20,8 @@ def movies():
                     "image_url": "https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/02/KXC1W2-920x584.jpg"
                     }
                     """
-    return render_template('movie.html', movie={})
+    python_string = json.loads(json_string)
+    return render_template('movie.html', python_string=python_string)
 
 
 @app.route('/tvshows')
@@ -56,9 +57,9 @@ def tv_shows():
     }]    
     """
     # Write code here to take the `json_string` and return list of movies to the user
+    python_string = json.loads(json_string)
 
-
-    return render_template('tv_shows.html')
+    return render_template('tv_shows.html', python_string = python_string)
 
 
 ############################
